@@ -27,10 +27,10 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{% trans 'Id' %}</th>
-                <th>{% trans 'Cihaz adı' %}</th>
-                <th>{% trans 'Api Key' %}</th>
-                <th>{% trans 'API Key Üret' %}</th>
+                <th>Id</th>
+                <th>Cihaz adı</th>
+                <th>Device Name</th>
+                <th>API Key</th>
             </tr>
             </thead>
             <tbody>
@@ -39,7 +39,7 @@
                 <td>{{ i.id }}</td>
                 <td>{{ i.name }}</td>
                 <td><a class="tooltip-viewport-bottom" title="{{ i.api_key }}">{{ i.api_key }}</a></td>
-                <td><a class="btn btn-danger" href="{% url 'generate_key' i.id %}" role="button" onclick="return confirm('{% trans "Are you sure you want to generate a new write API key?" %}');">{% trans 'Üret' %}</a></td>
+                <td><a class="btn btn-danger" href="{% url 'generate_key' i.id %}" role="button" onclick="return confirm('{% trans "Are you sure you want to generate a new write API key?" %}');">Delete</a></td>
             </tr>
             {% endfor %}
             </tbody>

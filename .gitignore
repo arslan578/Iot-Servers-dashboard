@@ -19,3 +19,4 @@ __pycache__
 python27*
 iotdasboard.egg-info/
 /iotdashboard_static/
+iot-venv/

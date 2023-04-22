@@ -1,18 +1,40 @@
 {% load i18n %}
 
+<style>
+    .nav-headers {
+        padding-right: 20px;
+        padding-left: 20px;
+        font-weight: bold;
+        color: red;
+        font-size: 2rem;
+    }
+</style>
+
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
         <li class="{% if panel %}active{% endif %}"><a href="{% url 'index' %}">Panel <span class="sr-only">(current)</span></a></li>
+        <li class="{% if server_add %}active{% endif %}"><a href="{% url 'server_created' %}">Create Cloud Server <small style="color: red">(beta)</small> <span class="sr-only">(current)</span></a></li>
+        <li class="{% if memory_monitoring %}active{% endif %}"><a href="{% url 'servers_memory_monitoring' %}">Server Memory Monitoring <span class="sr-only">(current)</span></a></li>
         <li class="{% if device_add %}active{% endif %}"><a href="{% url 'device_add' %}">Device Add <span class="sr-only">(current)</span></a></li>
         <li class="{% if device_list %}active{% endif %}"><a href="{% url 'device_list' %}">Device List <span class="sr-only">(current)</span></a></li>
-    </ul>
-    <ul class="nav nav-sidebar">
-        <li class="{% if datas %}active{% endif %}"><a href="{% url 'datas' %}">Datas <span class="sr-only">(current)</span></a></li>
-    </ul>
-    <ul class="nav nav-sidebar">
+        <li class="{% if data %}active{% endif %}"><a href="{% url 'datas' %}">Datas <span class="sr-only">(current)</span></a></li>
         <li class="{% if key_list %}active{% endif %}"><a href="{% url 'key_list' %}">Key List <span class="sr-only">(current)</span></a></li>
     </ul>
     <ul class="nav nav-sidebar">
+        <li ><span class="nav-headers">Asian Servers</span></li>
+               <li class="{% if datas %}active{% endif %}"><a href="{% url 'datas' %}">Pakistan Server <span class="sr-only">(current)</span></a></li>
+               <li class="{% if lahore_server %}active{% endif %}"><a href="{% url 'region_key_list' 'Lahore'  %}">Lahore Server  <span class="sr-only">(current)</span></a></li>
+               <li class="{% if islamabad_server %}active{% endif %}"><a href="{% url 'region_key_list'  'Islamabad' %}">Islamabad Server  <span class="sr-only">(current)</span></a></li>
+    </ul>
+    <ul class="nav nav-sidebar">
+        <li ><span class="nav-headers">EUR Servers</span></li>
+                       <li class="{% if datas %}active{% endif %}"><a href="{% url 'datas' %}">England Server <span class="sr-only">(current)</span></a></li>
+               <li class="{% if portsmouth_server %}active{% endif %}"><a href="{% url 'region_key_list' 'portsmouth' %}">Portsmouth Server  <span class="sr-only">(current)</span></a></li>
+               <li class="{% if london_server %}active{% endif %}"><a href="{% url 'region_key_list' 'london' %}">London Server <span class="sr-only">(current)</span></a></li>
+
+    </ul>
+    <ul class="nav nav-sidebar">
+        <li ><span class="nav-headers">API Documentation</span></li>
         <li><a href="/api/">{% trans 'API' %}</a></li>
         <li><a href="{% url 'api_data' %}">{% trans 'API Data' %}</a></li>
     </ul>

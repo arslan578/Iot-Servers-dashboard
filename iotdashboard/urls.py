@@ -1,35 +1,4 @@
 """
-Iotdashboard project
-Django 3.2.8
-Python 3.9.1
-
-Author: Sahin MERSIN
-
-Demo: http://iotdashboard.pythonanywhere.com
-Source: https://github.com/electrocoder/iotdashboard
-
-https://iothook.com/
-http://mesebilisim.com
-
-The MIT License (MIT)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 """
 
 from django.urls import path, include
@@ -42,6 +11,8 @@ from django.views.static import serve
 from rest_framework import routers
 
 from devices import views as devices
+
+from cloudservers import views as servers
 
 from datas import views as datas
 
@@ -72,6 +43,17 @@ urlpatterns = i18n_patterns(
     # django admin page
     path('admin/', admin.site.urls),
 )
+
+# Cloud Servers
+
+urlpatterns += [
+    path('servers/list/<str:server>/', servers.region_key_list, name='region_key_list'),
+    path('servers_memory_monitoring/create/', servers.server_created, name='server_created'),
+    path('servers_memory_monitoring/', servers.servers_memory_monitoring, name='servers_memory_monitoring'),
+    path('servers_memory_monitoring/edit/<str:id>/', servers.increase_or_decrease_memory_memory,
+         name='increase_or_decrease_memory_memory'),
+    path('servers_memory_monitoring/delete/<str:id>/', servers.delete_memory_servers, name='delete_memory_servers'),
+]
 
 urlpatterns += [
     # REST framework

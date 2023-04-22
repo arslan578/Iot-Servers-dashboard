@@ -9,34 +9,75 @@
 {% block website_name %}{% website_name %}{% endblock %}
 
 {% block content %}
-<div class="row placeholders">
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'device_add' %}">
-        <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'IoT Device Add' %}">
-        <h4>{% trans 'Device Add' %}</h4></a>
-        <span class="text-muted">{% trans 'IoT Device Management' %}</span>
+    <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{% url 'device_add' %}">
+                <img src="{% static "back/dashboard/img/cloud-256.png" %}" width="200" height="200"
+                     class="img-responsive"
+                     alt="{% trans 'IoT Device Add' %}">
+                <h4>{% trans 'Device Add' %}</h4></a>
+            <span class="text-muted">{% trans 'IoT Device Management' %}</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{% url 'device_list' %}">
+                <img src="{% static "back/dashboard/img/element-256.png" %}" width="200" height="200"
+                     class="img-responsive"
+                     alt="{% trans 'IoT Device List' %}">
+                <h4>{% trans 'Device List' %}</h4></a>
+            <span class="text-muted">{% trans 'IoT Device View' %}</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{% url 'datas' %}">
+                <img src="{% static "back/dashboard/img/channel-256.png" %}" width="200" height="200"
+                     class="img-responsive"
+                     alt="{% trans 'IoT Data List' %}">
+                <h4>{% trans 'Data List' %}</h4></a>
+            <span class="text-muted">{% trans 'IoT Data Management' %}</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{% url 'key_list' %}">
+                <img src="{% static "back/dashboard/img/key-256.png" %}" width="200" height="200" class="img-responsive"
+                     alt="{% trans 'API Key' %}">
+                <h4>{% trans 'Key Management' %}</h4></a>
+            <span class="text-muted">{% trans 'New Key Management' %}</span>
+        </div>
+
+
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{% url 'region_key_list' 'Lahore' %}">
+                <img src="{% static "back/dashboard/img/lahore.png" %}" width="200" height="200" class="img-responsive"
+                     alt="{% trans 'API Key' %}">
+                <h4>{% trans 'Lahore Server Device List' %}</h4></a>
+            <span class="text-muted">{% trans 'Region Server Devices' %}</span>
+        </div>
+
+
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{% url 'region_key_list' 'Islamabad' %}">
+                <img src="{% static "back/dashboard/img/Islamabad.png" %}" width="200" height="200"
+                     class="img-responsive"
+                     alt="{% trans 'API Key' %}">
+                <h4>{% trans 'Islamabad Server Device List' %}</h4></a>
+            <span class="text-muted">{% trans 'Region Server Devices' %}</span>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{% url 'region_key_list' 'London' %}">
+                <img src="{% static "back/dashboard/img/london.png" %}" width="200" height="200" class="img-responsive"
+                     alt="{% trans 'API Key' %}">
+                <h4>{% trans 'London Server Device List' %}</h4></a>
+            <span class="text-muted">{% trans 'Region Server Devices' %}</span>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <a href="{% url 'region_key_list' 'Portsmouth' %}">
+                <img src="{% static "back/dashboard/img/portsmouth.png" %}" width="200" height="200"
+                     class="img-responsive"
+                     alt="{% trans 'API Key' %}">
+                <h4>{% trans 'Portsmouth Server Device List' %}</h4></a>
+            <span class="text-muted">{% trans 'Region Server Devices' %}</span>
+        </div>
+
+
     </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'device_list' %}">
-        <img src="{% static "back/dashboard/img/element-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'IoT Device List' %}">
-        <h4>{% trans 'Device List' %}</h4></a>
-        <span class="text-muted">{% trans 'IoT Device View' %}</span>
-    </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'datas' %}">
-        <img src="{% static "back/dashboard/img/channel-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'IoT Data List' %}">
-        <h4>{% trans 'Data List' %}</h4></a>
-        <span class="text-muted">{% trans 'IoT Data Management' %}</span>
-    </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <a href="{% url 'key_list' %}">
-        <img src="{% static "back/dashboard/img/key-256.png" %}" width="200" height="200" class="img-responsive"
-             alt="{% trans 'API Key' %}">
-        <h4>{% trans 'Key Management' %}</h4></a>
-        <span class="text-muted">{% trans 'New Key Management' %}</span>
-    </div>
-</div>
 {% endblock %}

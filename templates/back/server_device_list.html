@@ -7,8 +7,8 @@
 {% block title %} Device List {% endblock %}
 
 {% block website_name %} Device List
-    <a class="btn btn-primary" href='{% url "export" "device" %}?format=json' role="button">Export Json</a>
-    <a class="btn btn-success" href='{% url "export" "device" %}?format=xml' role="button">Export Xml </a>
+    <a class="btn btn-primary" href='{% url "export" "device" %}?format=json' role="button">{% trans 'Json aktar' %}</a>
+    <a class="btn btn-success" href='{% url "export" "device" %}?format=xml' role="button">{% trans 'Xml aktar' %}</a>
 {% endblock %}
 
 {% block content %}
@@ -52,7 +52,7 @@
                 <td>{{ i.description | truncatechars:20 }}</td>
                 <td>{{ i.enable }}</td>
                 <td><a class="btn btn-warning" href="{% url 'device_edit' i.id %}" role="button">Edit »</a></td>
-                <td><a class="btn btn-danger" href="{% url 'device_delete' i.id %}" role="button" onclick="return confirm('The device and data will be wiped. Are you sure?');">Delete</a></td>
+                <td><a class="btn btn-danger" href="{% url 'device_delete' i.id %}" role="button" onclick="return confirm('The device and data will be wiped. are you sure');">Delete</a></td>
             </tr>
             {% endfor %}
             </tbody>

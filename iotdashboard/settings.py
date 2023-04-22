@@ -1,39 +1,4 @@
-"""
-Iotdashboard project
-Django 3.2.8
-Python 3.9.1
-
-Author: Sahin MERSIN
-
-Demo: http://iotdashboard.pythonanywhere.com
-Source: https://github.com/electrocoder/iotdashboard
-
-https://iothook.com/
-http://mesebilisim.com
-
-The MIT License (MIT)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
-
 import os
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -58,6 +23,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'devices',
     'datas',
+    'cloudservers'
 ]
 
 MIDDLEWARE = [
@@ -95,10 +61,21 @@ WSGI_APPLICATION = 'iotdashboard.wsgi.application'
 
 DEBUG = True
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'iotdashboard_db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'iotdashboard_db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "admin",
+        "HOST": "localhost",
+        "PORT": 5432,
     }
 }
 
@@ -123,12 +100,12 @@ AUTH_PASSWORD_VALIDATORS = [
 _ = lambda s: s
 
 LANGUAGES = [
-  ('en', _('English')),
-  ('tr', _('Turkish')),
+    ('en', _('English')),
+    ('tr', _('Turkish')),
 ]
 
 LOCALE_PATHS = (
-                os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 LANGUAGE_CODE = 'en'
@@ -141,12 +118,11 @@ USE_L10N = True
 
 USE_TZ = False
 
-
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-                    BASE_DIR + '/static/',
+    BASE_DIR + '/static/',
 )
 
 STATICFILES_FINDERS = (
@@ -156,9 +132,9 @@ STATICFILES_FINDERS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-LOGIN_URL          = '/admin/login/'
+LOGIN_URL = '/admin/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGIN_ERROR_URL    = '/'
+LOGIN_ERROR_URL = '/'
 
 CACHES = {
     'default': {
@@ -170,5 +146,3 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 1
 }
-
-

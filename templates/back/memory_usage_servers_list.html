@@ -1,0 +1,64 @@
+{% extends "back/base.html" %}
+
+{% load static %}
+{% load custom_tags %}
+{% load i18n %}
+
+{% block title %} Device List {% endblock %}
+
+{% block website_name %} Device List
+    <a class="btn btn-primary" href='{% url "export" "device" %}?format=json' role="button"> Export json</a>
+    <a class="btn btn-success" href='{% url "export" "device" %}?format=xml' role="button">Export Xml</a>
+{% endblock %}
+
+{% block content %}
+
+{% if msg_ok %}
+    <div class="alert alert-info" role="alert">
+        <strong>{{ msg_ok }}</strong>
+    </div>
+{% endif %}
+
+{% if msg_err %}
+    <div class="alert alert-warning" role="alert">
+        <strong>{{ msg_err }}</strong>
+    </div>
+{% endif %}
+
+<div class="col-xs-12 col-sm-12 placeholder">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th> ID </th>
+                <th> Server Name </th>
+                <th> Location </th>
+                <th> Total Memory(%) </th>
+                <th>Used Memory(%) </th>
+                <th>Uploaded File Limit</th>
+                <th>Total Uploaded File</th>
+
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in list %}
+            <tr>
+                <td>#{{ i.id }}</td>
+                <td>{{ i.server_name }}</td>
+                <td>{{ i.location }}</td>
+                <td>{{ i.total_memory }}</td>
+                <td>{{ i.used_memory }}</td>
+                <td>{{ i.uploaded_file_limit }}</td>
+                <td>{{ i.total_uploaded_file }}</td>
+                <td><a class="btn btn-warning" href="{% url 'increase_or_decrease_memory_memory' i.id %}" role="button">Edit »</a></td>
+                <td><a class="btn btn-danger" href="{% url 'delete_memory_servers' i.id %}" role="button" onclick="return confirm('The server and data will be wiped. Are you sure?');">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

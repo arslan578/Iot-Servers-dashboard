@@ -1,12 +1,5 @@
 # iot-dashboard
 # IoT: Platform for Internet of Things
-[![Gitter](https://badges.gitter.im/electrocoder/iot-dashboard.svg)](https://gitter.im/electrocoder/iot-dashboard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
-[![Build Status](https://travis-ci.org/Samsung/iotjs.svg?branch=master)](https://iothook.com/)
-[![Django](https://img.shields.io/pypi/pyversions/Django.svg)](https://iothook.com/)
-
-You can find project details on our [project page](https://iothook.com/) and [wiki](https://iothook.com/).
-Demo Page (http://iotdashboardapp.pythonanywhere.com/en/)
 
 <p align="center">
 <img 
@@ -46,7 +39,7 @@ Installing
 ----------
 
 ```
-git clone https://github.com/electrocoder/iotdashboard.git
+git clone https://github.com/arslan578/Iot-Servers-dashboard.git
 ```
 
 Docker
@@ -73,17 +66,16 @@ http://electrocoder.github.io/iotdashboard/
 Readthedocs
 -----------
 
-```
-http://iotdashboard.readthedocs.io/tr/latest/
-```
+Installing Pip
+--------------
+python3 -m virtualenv iot-venv
+iot-venv\Scripts\activate (Windows)
 
 Installing Pip
 --------------
 
 ```
-https://pypi.python.org/pypi/iotdasboard
-or
-pip install iotdasboard
+pip install -r requirements.txt
 ```
 
 Run
@@ -95,30 +87,7 @@ or
 ./manage.py runserver 0.0.0.0:8000
 ```
 
-Test on IOTDASHBOARD
--------------
-
-```
-server: https://www.pythonanywhere.com/
-username: iotdashboardapp
-email: iotdashboard@yandex.com
-password: admin12345!!
-app url: http://iotdashboardapp.pythonanywhere.com/tr/
-```
-
 Contact
 -------
-Şahin MERSİN [@electrocoder](http://twitter.com/electrocoder)
-iothook [@iothook](https://twitter.com/iothook)
+Arslan Zaheer [Email](up2032529@myport.ac.uk)
 
-License
--------
-Iotdashboard source code is available under the MIT [License](/LICENSE).
-
-Author
-------
-Şahin MERSİN [@electrocoder](http://twitter.com/electrocoder) (https://www.facebook.com/electrocoder)
-
-Meşe Bilişim [http://mesebilisim.com/]
-
-IoThook [http://iothook.com]
