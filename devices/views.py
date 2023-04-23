@@ -93,7 +93,7 @@ def device_edit(request, id):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            msg_ok = "Kanal güncelleme başarılı"
+            msg_ok = "Channel update successful"
             return HttpResponseRedirect(reverse('device_list'))
         else:
             msg_err = "Attention! Please correct the errors"

@@ -13,24 +13,30 @@
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
         <li class="{% if panel %}active{% endif %}"><a href="{% url 'index' %}">Panel <span class="sr-only">(current)</span></a></li>
-        <li class="{% if server_add %}active{% endif %}"><a href="{% url 'server_created' %}">Create Cloud Server <small style="color: red">(beta)</small> <span class="sr-only">(current)</span></a></li>
-        <li class="{% if memory_monitoring %}active{% endif %}"><a href="{% url 'servers_memory_monitoring' %}">Server Memory Monitoring <span class="sr-only">(current)</span></a></li>
-        <li class="{% if device_add %}active{% endif %}"><a href="{% url 'device_add' %}">Device Add <span class="sr-only">(current)</span></a></li>
+        <li class="{% if server_add %}active{% endif %}"><a href="{% url 'server_created' %}">Create Cloud Servers <small style="color: red">(beta)</small> <span class="sr-only">(current)</span></a></li>
+        <li class="{% if memory_monitoring %}active{% endif %}"><a href="{% url 'servers_memory_monitoring' %}">Cloud Servers List<span class="sr-only">(current)</span></a></li>
+        <li class="{% if device_add %}active{% endif %}"><a href="{% url 'device_add' %}">Device Add </small><span class="sr-only">(current)</span></a></li>
+        <li class="{% if media_add %}active{% endif %}"><a href="{% url 'media_add' %}">Media File Add <small style="color: red">(beta)</small><span class="sr-only">(current)</span></a></li>
         <li class="{% if device_list %}active{% endif %}"><a href="{% url 'device_list' %}">Device List <span class="sr-only">(current)</span></a></li>
-        <li class="{% if data %}active{% endif %}"><a href="{% url 'datas' %}">Datas <span class="sr-only">(current)</span></a></li>
+        <li class="{% if data %}active{% endif %}"><a href="{% url 'datas' %}">Servers Memory Analysis <small style="color: red"> (beta)</small> <span class="sr-only">(current)</span></a></li>
         <li class="{% if key_list %}active{% endif %}"><a href="{% url 'key_list' %}">Key List <span class="sr-only">(current)</span></a></li>
+        <li class="{% if available_memory_servers %}active{% endif %}"><a href="{% url 'servers_memory_monitoring' %}">Near Available Servers <span class="sr-only">(current)</span></a></li>
     </ul>
     <ul class="nav nav-sidebar">
         <li ><span class="nav-headers">Asian Servers</span></li>
                <li class="{% if datas %}active{% endif %}"><a href="{% url 'datas' %}">Pakistan Server <span class="sr-only">(current)</span></a></li>
-               <li class="{% if lahore_server %}active{% endif %}"><a href="{% url 'region_key_list' 'Lahore'  %}">Lahore Server  <span class="sr-only">(current)</span></a></li>
-               <li class="{% if islamabad_server %}active{% endif %}"><a href="{% url 'region_key_list'  'Islamabad' %}">Islamabad Server  <span class="sr-only">(current)</span></a></li>
+               <li class="{% if lahore_server %}active{% endif %}"><a href="{% url 'region_key_list' 'Lahore'  %}">  Lahore Register Devices  <span class="sr-only">(current)</span></a></li>
+               <li class="{% if lahore_server_media %}active{% endif %}"><a href="{% url 'media_list' 'Lahore'  %}">Lahore Server Media Files <span class="sr-only">(current)</span></a></li>
+               <li class="{% if islamabad_server %}active{% endif %}"><a href="{% url 'region_key_list'  'Islamabad' %}">Islamabad Register Devices   <span class="sr-only">(current)</span></a></li>
+                   <li class="{% if islamabad_server_media %}active{% endif %}"><a href="{% url 'media_list' 'Islamabad'  %}">Islamabad Server Media Files <span class="sr-only">(current)</span></a></li>
     </ul>
     <ul class="nav nav-sidebar">
         <li ><span class="nav-headers">EUR Servers</span></li>
                        <li class="{% if datas %}active{% endif %}"><a href="{% url 'datas' %}">England Server <span class="sr-only">(current)</span></a></li>
-               <li class="{% if portsmouth_server %}active{% endif %}"><a href="{% url 'region_key_list' 'portsmouth' %}">Portsmouth Server  <span class="sr-only">(current)</span></a></li>
-               <li class="{% if london_server %}active{% endif %}"><a href="{% url 'region_key_list' 'london' %}">London Server <span class="sr-only">(current)</span></a></li>
+               <li class="{% if portsmouth_server %}active{% endif %}"><a href="{% url 'region_key_list' 'Portsmouth' %}">Portsmouth Register Devices  <span class="sr-only">(current)</span></a></li>
+    <li class="{% if portsmouth_server_media %}active{% endif %}"><a href="{% url 'media_list' 'Portsmouth'  %}">Portsmouth Server Media Files <span class="sr-only">(current)</span></a></li>
+               <li class="{% if london_server %}active{% endif %}"><a href="{% url 'region_key_list' 'London' %}">London Register Devices <span class="sr-only">(current)</span></a></li>
+    <li class="{% if london_server_media %}active{% endif %}"><a href="{% url 'media_list' 'London'  %}">London Server Media Files <span class="sr-only">(current)</span></a></li>
 
     </ul>
     <ul class="nav nav-sidebar">
