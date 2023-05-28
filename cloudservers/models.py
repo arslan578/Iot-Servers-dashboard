@@ -32,6 +32,7 @@ class DeviceMedia(models.Model):
     ip_address = models.CharField(_('Ip Address'), max_length=32)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    is_dirty_jeans = models.BooleanField(default=False)
 
     # def __str__(self):
     #     return f"{self.file_name}-{self.ip_address}"

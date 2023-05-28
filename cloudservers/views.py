@@ -129,6 +129,16 @@ def media_files_list(request, server=''):
 
 
 @login_required(login_url=LOGIN_URL)
+def dirty_jeans_media(request):
+    """
+    :param request:
+    :return:
+    """
+
+    list = DeviceMedia.objects.filter(is_dirty_jeans=True)
+    return render(request, "back/dirty_jeans.html", locals())
+
+@login_required(login_url=LOGIN_URL)
 @csrf_exempt
 def media_file_add(request):
     """
@@ -198,8 +208,7 @@ def check_region_server_memory_available(request, server=''):
     :return:
     """
     required_server_memory = ServerStorageMemory.objects.filter(location=server.capitalize()).first()
-    list = ServerStorageMemory.objects.filter(region=required_server_memory.region,
-                                              used_memory__lt=required_server_memory.used_memory)
+    list = ServerStorageMemory.objects.filter(region=required_server_memory.region)
     if server == "Lahore":
         lahore_server_media = True
     elif server == "Islamabad":

