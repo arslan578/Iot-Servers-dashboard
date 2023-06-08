@@ -20,3 +20,6 @@ python27*
 iotdasboard.egg-info/
 /iotdashboard_static/
 iot-venv/
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
